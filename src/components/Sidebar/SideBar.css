@@ -1,11 +1,13 @@
 .sideBar {
   width: 15rem;
   height: 100vh;
-  background-color: rgba(250, 250, 250);
+  position: fixed;
+  z-index: 1;
 }
 
 .sideBar .logo {
-  width: 9rem;
+  margin-top: 8px;
+  width: 7rem;
   height: 2rem;
   padding-right: 10px;
 }
@@ -21,11 +23,16 @@
 
 .sideBar .bottom .github {
   font-size: 1.7rem;
-  margin-right: 24px;
-  color: black;
+  margin-left: 24px;
+  border: none;
 }
-.sideBar .bottom .darkmode {
+
+button, input[type="submit"], input[type="reset"] .sideBar .bottom .darkmode {
   font-size: 1.4rem;
-  margin-right: 24px;
   color: black;
+  background: none;
+	color: inherit;
+	border: none;
+	cursor: pointer;
+	outline: inherit;
 }

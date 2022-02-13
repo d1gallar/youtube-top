@@ -1,44 +1,49 @@
 import React from "react";
-import "bootstrap-icons/font/bootstrap-icons.css";
-import MenuList from "../MenuList/MenuList";
+import { Link } from "react-router-dom";
 import "./SideBar.css";
-import sideBarLogo from "../../images/youtube-logo-sidebar.svg";
+import "../../App.css";
+import "bootstrap-icons/font/bootstrap-icons.css";
+import Navbar from "../Navbar/Navbar";
 
 class Sidebar extends React.Component {
-  render() {
-    return (
-      <div className="d-flex flex-column flex-shrink-0 sideBar">
-        <div className="top">
-          <a
-            href="/"
-            className="d-flex align-items-center justify-content-center mb-md-0 me-md-auto link-dark text-decoration-none"
-          >
-            {/* <i className="bi bi-list list"></i> */}
-            <img className="logo" src={sideBarLogo} alt="Youtube Logo" />
-          </a>
-        </div>
 
-        <ul className="content nav flex-column mb-auto pt-3">
-          <MenuList
-            link="#"
-            iconClass="bi bi-house-door-fill"
-            label="Home"
-            isActive={true}
-          />
-          <MenuList
-            link="#"
-            iconClass="bi bi-bar-chart-fill"
-            label="Trending Now"
-            isActive={false}
-          />
-        </ul>
+  onThemeToggle = () => {
+    this.props.toggleTheme();
+  }
+
+  renderLogo() {
+    if(this.props.theme === 'light'){
+      return (
+        <img className="logo" src="/images/youtube-light.svg" alt="Youtube Logo" />
+      )
+    } else {
+      return (
+        <img className="logo" src="/images/youtube-dark.svg" alt="Youtube Logo" />
+      )
+    }
+  }
+
+  render() {
+    const gitURL = "https://github.com/d1gallar/youtube-top";
+    const {theme} = this.props;
+    return (
+      <div className='d-flex flex-column flex-shrink-0 sideBar' data-theme={`${theme}`}>
+        <div className="top">
+          <Link
+            to="/"
+            className="d-flex align-items-center justify-content-center"
+          >
+            {this.renderLogo()}
+          </Link>
+        </div>
+        <Navbar theme={theme} />
         <div className="bottom d-flex align-items-center">
-            <a href="X">
-              <i className="bi bi-moon-fill darkmode"></i>
-            </a>
-            <a href="X">
-              <i className="bi bi-github github"></i>
-            </a>
+          <button onClick={this.onThemeToggle}>
+            <i className="bi bi-moon-fill darkmode" data-theme={`${theme}`}></i>
+          </button>
+          <a href={`${gitURL}`} target="_blank" rel="noreferrer noopener">
+            <i className="bi bi-github github" data-theme={`${theme}`}></i>
+          </a>
         </div>
       </div>
     );
