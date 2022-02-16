@@ -8,3 +8,10 @@ This web app is built with a bunch of tools such as:
 - [Express](https://expressjs.com/)
 - [Node](https://nodejs.org/en/)
 - [Bootstrap](https://getbootstrap.com/)
+
+## Installation
+To install this web app, you need to run the node package manager and install all of its packages. Next, you need to run the server and you're all set!
+
+<code>npm install</code>
+
+<code>npm start </code>
