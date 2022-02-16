@@ -1,0 +1,30 @@
+.channelUrl {
+  text-decoration: none;
+  color:black;
+  display: flex;
+  align-content: center;
+}
+
+a.channelUrl::first-line {
+  line-height: 2em;
+}
+
+.center {
+  text-align: center;
+}
+
+.channelUrl:hover{
+  cursor:pointer;
+  color:black;
+  text-decoration: underline;
+}
+
+.vertical-center {
+  vertical-align: middle;
+}
+
+.name {
+  margin: 0;
+  display: flex;
+  align-items: center;
+}

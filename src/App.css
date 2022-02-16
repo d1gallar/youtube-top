@@ -29,10 +29,6 @@ body {
   background-color: var(--background);
 }
 
-.App[data-theme='dark'] {
-  background-color: var(--background);
-}
-
 .sideBar[data-theme='dark'] {
   background-color: var(--sidebar-background);
   color: var(--text-primary);

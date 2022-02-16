@@ -1,6 +1,6 @@
 .sideBar {
   width: 15rem;
-  height: 100vh;
+  height: 100%;
   position: fixed;
   z-index: 1;
 }

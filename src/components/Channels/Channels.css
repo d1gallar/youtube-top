@@ -1,0 +1,38 @@
+.left {
+  margin-left: 15rem;
+}
+
+.container {
+  padding-top: 2rem;
+  padding-left: 2.5rem;
+  width: 100vw;
+}
+
+.center {
+  text-align: center;
+}
+
+.table > :not(:first-child) {
+  border-top: 1.5px solid rgb(240, 240, 240);
+}
+.table > :last-child {
+  border: none;
+}
+
+.table>:not(caption)>*>* {
+  border-bottom: 1.5px solid rgb(240, 240, 240);
+}
+
+.channelPic {
+  border-radius: 50%;
+  width: 45px;
+  margin-right: 1rem;
+  float: left;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.channelPic:hover {
+  cursor:pointer;
+}

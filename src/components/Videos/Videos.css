@@ -1,0 +1,17 @@
+.left {
+  margin-left: 15rem;
+}
+
+.container {
+  max-width: 80vw;
+  width: 82.5vw;
+  padding-top: 2rem;
+  padding-left: 2rem;
+  height:auto;
+}
+
+.wrapper {
+  padding-top: 0.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 18.5rem);
+}
