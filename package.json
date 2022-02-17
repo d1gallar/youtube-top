@@ -4,6 +4,6 @@
   },
   "scripts": {
     "start": "concurrently \"cd backend && npm run dev\" \"cd frontend && npm start\" ",
-    "heroku-postbuild" : "cd client && npm install && npm run build"
+    "heroku-postbuild" : "cd frontend && npm install && npm run build"
   }
 }
