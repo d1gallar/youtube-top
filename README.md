@@ -13,7 +13,9 @@ This web app is built with a bunch of tools such as:
 To install this web app, you need to run the node package manager and install all of its packages. Next, you need to run the backend and frontend server and you're all set!
 
 1. Install all node packages in the /frontend, /backend, and root folders!
-<code>npm install</code>
+
+    <code>npm install</code>
 
 2. Start both servers with this command in the root directory!
-<code>npm start </code>
+
+     <code>npm start </code>
