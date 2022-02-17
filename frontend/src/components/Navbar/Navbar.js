@@ -13,6 +13,12 @@ const Navbar = (props) => {
         label="Top Channels"
         theme={theme}
       />
+      <NavItem
+        link="/broadcasts"
+        iconClass="bi bi-broadcast"
+        label="Top Broadcasts"
+        theme={theme}
+      />
     </nav>
   );
 };
