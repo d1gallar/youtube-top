@@ -15,7 +15,7 @@ const fetchPopularVideos = youtube.get("/videos", {
   params: {
     chart: "mostPopular",
     part: "snippet,statistics",
-    maxResults: DEFAULT_SIZE,
+    maxResults: DEFAULT_SIZE
   },
 });
 

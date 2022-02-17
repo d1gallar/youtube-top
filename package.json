@@ -3,6 +3,6 @@
     "concurrently": "^7.0.0"
   },
   "scripts": {
-    "dev": "concurrently \"cd backend && npm run dev\" \"cd frontend && npm start\" "
+    "start": "concurrently \"cd backend && npm run dev\" \"cd frontend && npm start\" "
   }
 }
