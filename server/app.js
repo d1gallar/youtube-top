@@ -6,8 +6,6 @@ const cors = require("cors");
 const app = express();
 const port = process.env.PORT || 8080;
 
-const apiChannelRouter = require("./routes/ApiChannels");
-const apiVideoRouter = require("./routes/ApiVideos");
 const channelRouter = require("./routes/Channels");
 const videoRouter = require("./routes/Videos");
 
@@ -20,15 +18,13 @@ app.get("/", (req, res) => {
   res.render(path.resolve(__dirname, "../client/build/", "index.html"));
 });
 
+app.get("/channels", channelRouter);
+app.get("/videos", videoRouter);
+
 if (process.NODE_ENV === "production") {
-  app.get("/api/channels", apiChannelRouter);
-  app.get("/api/videos", apiVideoRouter);
   app.get("*", (req, res) => {
     res.sendFile(path.resolve(__dirname, "../client/build", "index.html"));
   });
-} else {
-  app.get("/channels", channelRouter);
-  app.get("/videos", videoRouter);
 }
 
 app.listen(port, () => {

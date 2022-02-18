@@ -11,7 +11,7 @@ class Channels extends React.Component {
 
   fetchChannels = async () => {
     try {
-      const response = await axios.get("/api/channels");
+      const response = await axios.get("/channels");
       this.setState({ channels: response.data, isLoading: false });
     } catch (e) {
       this.setState({ channels: [], isLoading: false });

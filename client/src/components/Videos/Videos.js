@@ -9,6 +9,28 @@ const DEFAULT_SIZE = 12;
 class Videos extends React.Component {
   state = { videos: [], isLoading: true };
 
+  fetchVideos = async () => {
+    try {
+      const response = await axios.get("/videos");
+      this.setState({ videos: response.data, isLoading: false });
+    } catch (e) {
+      this.setState({ videos: [], isLoading: false });
+      console.error("Failed to fetch top videos!\n", e);
+    }
+  };
+
+  loadSkeletons() {
+    const { theme } = this.props;
+    let arr = [];
+    for (let i = 0; i < DEFAULT_SIZE; i++) {
+      arr.push(i);
+    }
+
+    return arr.map((x) => {
+      return <SkeletonCard theme={theme} key={x} />;
+    });
+  }
+
   renderVideos() {
     const { videos } = this.state;
     const { theme } = this.props;
@@ -29,28 +51,6 @@ class Videos extends React.Component {
           theme={theme}
         />
       );
-    });
-  }
-
-  fetchVideos = async () => {
-    try {
-      const response = await axios.get("/api/videos");
-      this.setState({ videos: response.data, isLoading: false });
-    } catch (e) {
-      this.setState({ videos: [], isLoading: false });
-      console.error("Failed to fetch top videos!\n", e);
-    }
-  };
-
-  loadSkeletons() {
-    const { theme } = this.props;
-    let arr = [];
-    for (let i = 0; i < DEFAULT_SIZE; i++) {
-      arr.push(i);
-    }
-
-    return arr.map((x) => {
-      return <SkeletonCard theme={theme} key={x} />;
     });
   }
 

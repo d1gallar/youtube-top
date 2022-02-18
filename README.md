@@ -15,8 +15,9 @@ To install this web app, you need to run the node package manager and install al
 
 1. Install all node packages!
 
-    <code>npm run postinstall</code>
+    <code>npm run client:install</code>
+    <code>npm install</code>
 
 2. Start both servers with this command in the root directory!
 
-     <code>npm run start </code>
+    <code>npm run start</code>
