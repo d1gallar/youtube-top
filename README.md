@@ -8,14 +8,15 @@ This web app is built with a bunch of tools such as:
 - [Express](https://expressjs.com/)
 - [Node](https://nodejs.org/en/)
 - [Bootstrap](https://getbootstrap.com/)
+- [Axios](https://axios-http.com/)
 
 ## Installation
 To install this web app, you need to run the node package manager and install all of its packages. Next, you need to run the backend and frontend server and you're all set!
 
-1. Install all node packages in the /frontend, /backend, and root folders!
+1. Install all node packages!
 
-    <code>npm install</code>
+    <code>npm run postinstall</code>
 
 2. Start both servers with this command in the root directory!
 
-     <code>npm start </code>
+     <code>npm run start </code>
