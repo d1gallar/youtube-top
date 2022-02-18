@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Videos from "./components/Videos/Videos";
 import Channels from "./components/Channels/Channels";
 import Sidebar from "./components/Sidebar/SideBar";
+import PageNotFound from './components/PageNotFound/PageNotFound';
 
 class App extends React.Component {
 
@@ -37,6 +38,7 @@ class App extends React.Component {
           <Routes>
             <Route exact path="/" element={<Videos theme={theme} toggleTheme={this.toggleTheme} />} />
             <Route exact path="/channels" element={<Channels theme={theme} toggleTheme={this.toggleTheme}/>} />
+            <Route path="*" element={<PageNotFound theme={theme} />} />
           </Routes>
         </BrowserRouter>
       </div>

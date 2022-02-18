@@ -21,11 +21,14 @@ app.get("/", (req, res) => {
 app.get("/channels", channelRouter);
 app.get("/videos", videoRouter);
 
-if (process.NODE_ENV === "production") {
-  app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "../client/build", "index.html"));
-  });
-}
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "../client/build", "index.html"));
+});
+// if (process.NODE_ENV === "production") {
+//   app.get("*", (req, res) => {
+//     res.sendFile(path.resolve(__dirname, "../client/build", "index.html"));
+//   });
+// }
 
 app.listen(port, () => {
   console.log(`Listening at http://localhost:${port}`);

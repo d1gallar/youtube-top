@@ -19,10 +19,11 @@
     "path": "^0.12.7"
   },
   "scripts": {
-    "client:install": "cd client && npm install",
-    "client": "cd client && npm start",
-    "dev": "concurrently --kill-others-on-fail \"nodemon server/app.js\" \"cd client && npm start\" ",
     "start": "node server/app.js",
+    "client-install": "cd client && npm install",
+    "client": "npm start --prefix client",
+    "server": "nodemon server/app.js",
+    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\" ",
     "heroku-postbuild": "cd client && npm run build"
   },
   "repository": {
