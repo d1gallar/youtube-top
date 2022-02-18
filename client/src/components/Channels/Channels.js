@@ -7,14 +7,43 @@ import axios from "axios";
 
 const DEFAULT_SIZE = 50;
 class Channels extends React.Component {
-  state = { channels: [] };
+  state = { channels: [], isLoading: true };
+
+  fetchChannels = async () => {
+    try {
+      const response = await axios.get("/api/channels");
+      this.setState({ channels: response.data, isLoading: false });
+    } catch (e) {
+      this.setState({ channels: [], isLoading: false });
+      console.error("Failed to fetch top channels!\n", e);
+    }
+  };
+
+  loadSkeleton() {
+    const { theme } = this.props;
+    let arr = [];
+    for (let i = 0; i < DEFAULT_SIZE; i++) {
+      arr.push(i);
+    }
+    return arr.map((x) => {
+      return <SkeletonChannel theme={theme} key={x} />;
+    });
+  }
 
   renderChannels() {
     const { channels } = this.state;
     const { theme } = this.props;
     return channels.map((channel, i) => {
-      const {channelPic, startDate, uploadCount, 
-        viewCount, title, subscribers, country, id} = channel;
+      const {
+        channelPic,
+        startDate,
+        uploadCount,
+        viewCount,
+        title,
+        subscribers,
+        country,
+        id,
+      } = channel;
       return (
         <ChannelCell
           rank={i + 1}
@@ -33,32 +62,13 @@ class Channels extends React.Component {
     });
   }
 
-  fetchChannels = async () => {
-    const response = await axios.get("/channels");
-    if(!response) throw new Error('Failed to fetch channels!');
-    this.setState({channels: response.data});
-  }
-
-  loadSkeleton() {
-    const { theme } = this.props;
-    let arr = [];
-    for (let i = 0; i < DEFAULT_SIZE; i++) {
-      arr.push(i);
-    }
-    return arr.map((x) => {
-      return <SkeletonChannel theme={theme} key={x} />;
-    });
-  }
-
   componentDidMount() {
-    setTimeout(() => {
-      this.fetchChannels();
-    },750);
+    this.fetchChannels();
   }
 
   render() {
     const { theme } = this.props;
-    const length = this.state.channels.length;
+    const { isLoading } = this.state;
     return (
       <div className="left container" data-theme={theme}>
         <h2 data-theme={theme}>Top Channels</h2>
@@ -78,7 +88,7 @@ class Channels extends React.Component {
               </tr>
             </thead>
             <tbody>
-              {length === 0 ? this.loadSkeleton() : this.renderChannels()}
+              {isLoading ? this.loadSkeleton() : this.renderChannels()}
             </tbody>
           </table>
         </div>

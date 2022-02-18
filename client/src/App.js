@@ -36,7 +36,7 @@ class App extends React.Component {
           <Sidebar theme={theme} toggleTheme={this.toggleTheme} />
           <Routes>
             <Route exact path="/" element={<Videos theme={theme} toggleTheme={this.toggleTheme} />} />
-            <Route exact path="channels" element={<Channels theme={theme} toggleTheme={this.toggleTheme}/>} />
+            <Route exact path="/channels" element={<Channels theme={theme} toggleTheme={this.toggleTheme}/>} />
           </Routes>
         </BrowserRouter>
       </div>

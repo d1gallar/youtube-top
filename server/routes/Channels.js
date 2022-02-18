@@ -4,7 +4,6 @@ const {fetchTopChannels} = require('../api/youtube');
 const {formatChannels} = require('../util/formatAPI');
 
 router.get('/channels', async (req, res) => {
-
   // Sends an API request to Youtube
   fetchTopChannels.then(({data}) => {
     const channels = data.items;

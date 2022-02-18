@@ -7,14 +7,15 @@ import SkeletonCard from "../Skeletons/SkeletonCard";
 const DEFAULT_SIZE = 12;
 
 class Videos extends React.Component {
-  state = { videos: [] };
+  state = { videos: [], isLoading: true };
 
   renderVideos() {
     const { videos } = this.state;
     const { theme } = this.props;
 
     return videos.map((video) => {
-      const { id, title, thumbnail, channelId, channel, views, channelPic} = video;
+      const { id, title, thumbnail, channelId, channel, views, channelPic } =
+        video;
       return (
         <VideoCard
           thumbnail={thumbnail}
@@ -32,9 +33,13 @@ class Videos extends React.Component {
   }
 
   fetchVideos = async () => {
-    const response = await axios.get("/videos");
-    if (!response) throw new Error("Failed to fetch most popular videos!");
-    this.setState({ videos: response.data });
+    try {
+      const response = await axios.get("/api/videos");
+      this.setState({ videos: response.data, isLoading: false });
+    } catch (e) {
+      this.setState({ videos: [], isLoading: false });
+      console.error("Failed to fetch top videos!\n", e);
+    }
   };
 
   loadSkeletons() {
@@ -50,18 +55,18 @@ class Videos extends React.Component {
   }
 
   componentDidMount() {
-      this.fetchVideos();
+    this.fetchVideos();
   }
 
   render() {
     const { theme } = this.props;
-    const length = this.state.videos.length;
+    const { isLoading } = this.state;
 
     return (
       <div className="left container">
         <h2 data-theme={theme}>Most Popular Videos</h2>
         <div className="wrapper">
-          {length === 0 ? this.loadSkeletons() : this.renderVideos()}
+          {isLoading ? this.loadSkeletons() : this.renderVideos()}
         </div>
       </div>
     );
