@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Videos from "./components/Videos/Videos";
 import Channels from "./components/Channels/Channels";
 import Sidebar from "./components/Sidebar/SideBar";
-import PageError from "./components/PageError/PageError.js";
+import PageError from "./components/PageError/PageError";
 
 class App extends React.Component {
 
