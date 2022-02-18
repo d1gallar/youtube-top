@@ -9,6 +9,6 @@
   "scripts": {
     "start": "concurrently \"cd backend && npm run dev\" \"cd frontend && npm start\" ",
     "postinstall": "./install.sh",
-    "heroku-postbuild": "npm run postinstall && npm start"
+    "heroku-postbuild": "npm run postinstall && npm run start"
   }
 }
