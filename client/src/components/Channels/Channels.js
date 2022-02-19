@@ -6,6 +6,7 @@ import SkeletonChannel from "../Skeletons/SkeletonChannel";
 import axios from "axios";
 
 const DEFAULT_SIZE = 50;
+
 class Channels extends React.Component {
   state = { channels: [], isLoading: true };
 
