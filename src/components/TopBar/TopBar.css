@@ -1,0 +1,27 @@
+.topBar {
+  display: none;
+  visibility: hidden;
+}
+
+.bi-github::before[data-theme='light']::before,
+.bi-github::before[data-theme='dark']::before {
+  color: var(--text-primary);
+}
+
+@media screen and (max-width:548px) {
+  .topBar {
+    width: 100%;
+    min-height: 7vh;
+    height: 7vh;
+    background-color: var(--bottombar-background);
+    position: fixed;
+    z-index: 1;
+    display: inherit;
+    visibility: visible;
+  }
+
+  .topBarLogo {
+    display: inherit;
+    visibility: visible;
+  }
+}

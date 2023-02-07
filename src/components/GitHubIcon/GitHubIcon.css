@@ -1,0 +1,10 @@
+.github[data-theme='light'],
+.github[data-theme='dark'] {
+  color: var(--text-primary);
+}
+
+.github {
+  font-size: 1.7rem;
+  /* margin-left: 24px; */
+  border: none;
+}

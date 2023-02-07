@@ -1,0 +1,39 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+}
+
+/* Light/Dark Mode */
+[data-theme='dark'] {
+  --background: #0D0D0D;
+  --text-primary: white;
+  --text-secondary: rgb(231, 231, 231);
+  --sidebar-background: black;
+  --sidebar-active: #F0302F;
+  --sidebar-hover: #363636;
+  --topbar-background: black;
+  --bottombar-background: black;
+}
+
+[data-theme='light'] {
+  --background: #fafafa;
+  --text-primary: rgb(0, 0, 0);
+  --text-secondary: rgb(33, 37, 41);
+  --sidebar-background: white;
+  --sidebar-active: rgb(233, 233, 233);
+  --sidebar-hover: #f0f0f0;
+  --topbar-background: white;
+  --bottombar-background: white;
+}
+
+.App[data-theme='dark'],
+.App[data-theme='light'] {
+  background-color: var(--background);
+}
+
+h2[data-theme='dark'],
+h2[data-theme='light'] {
+  color: var(--text-primary);
+}

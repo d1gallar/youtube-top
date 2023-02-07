@@ -1,0 +1,167 @@
+.redPill {
+  background-color: #FF0000;
+  font-size: 10px;
+  padding: 7px 10px;
+}
+.blackPill {
+  background-color: #000000;
+  font-size: 10px;
+  padding: 7px 10px;
+}
+
+.thumbnail {
+  width: 270px;
+  height: 150px;
+  object-fit:cover;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.card {
+  display: inline-flex;
+  max-width: 270px;
+  width: fit-content;
+  min-height: fit-content;
+  border: none;
+  gap: .75rem;
+}
+
+.row {
+  --bs-gutter-x: 1rem;
+  --bs-gutter-y: 0.2rem;
+}
+
+*, ::after, ::before {
+  box-sizing:content-box;
+}
+
+#channelPic {
+  border-radius: 50%;
+  width: 100%;
+  height: auto;
+  max-width: 45px;
+  margin: 0 0;
+}
+
+.channelPic:hover{
+  cursor: pointer;
+}
+
+.card-title {
+  color: var(--text-primary);
+  font-size: 0.85rem;
+  text-overflow: ellipsis;
+  margin: 0;
+  white-space: nowrap;
+  overflow-x: hidden;
+}
+
+a.card-text {
+  text-decoration: none;
+  text-overflow: ellipsis;
+}
+
+a.card-text:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+a.card-title {
+  text-decoration: none;
+  cursor: pointer;
+  color: var(--text-primary);
+}
+
+a.card-title:hover {
+  text-decoration: underline;
+  cursor: pointer;
+  color: var(--text-primary);
+}
+
+a.thumbnail {
+  width: fit-content;
+}
+
+.card-text {
+  font-size: 0.8rem;
+  margin-bottom: 0.1rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow-x: hidden;
+}
+
+.container-fluid {
+  padding: 0.2rem 0 0 0;
+}
+
+@media screen and (max-width:548px) {
+  .thumbnail {
+    width: 100%;
+    height: fit-content;
+  }
+  .card {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .cardBody {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .card-text {
+    text-overflow: ellipsis;
+  }
+
+  .cardBody.row {
+    margin: 0 0;
+    flex-wrap: nowrap;
+    width: fit-content;
+  }
+
+  img.channelPic{
+    margin-right: 0;
+    width: 100%;
+    height: auto;
+    max-height: 60px;
+    max-width: 60px;
+  }
+}
+
+.channelUrl[data-theme='light'],
+.channelUrl[data-theme='dark'] {
+  color: var(--text-primary);
+}
+
+.channelUrl[data-theme='light']:hover,
+.channelUrl[data-theme='dark']:hover {
+  color: var(--text-primary);
+}
+
+.card[data-theme='light'],
+.card[data-theme='dark'] {
+  background-color: var(--background);
+}
+
+.cardBody[data-theme='light'],
+.cardBody[data-theme='dark'] {
+  color: var(--text-primary);
+}
+
+a.card-text[data-theme='light'],
+a.card-text[data-theme='dark'] {
+  color: var(--text-primary);
+}
+
+@media screen and (max-width:375px) {
+  .cardBody.row {
+    margin: 0 0;
+    gap: 0;
+  }
+}
+
+@media screen and (max-width: 548px) {
+  a.thumbnail {
+    width: 100%;
+  }
+}

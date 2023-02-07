@@ -1,0 +1,43 @@
+.PageError.error {
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-primary);
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.PageError.flex-center {
+  display: flex;
+  width: 92%;
+  margin: 0 4% 0 4%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.error {
+  text-align: center;
+  height: 100vh;
+}
+
+.DataError.error :is(h1, h2, h3, h4, h5, h5) {
+  margin: 0 0;
+}
+
+.error a {
+  color: white;
+  background-color: rgb(220, 37, 37);
+  padding: 1rem 1.2rem;
+  border-radius: 15px;
+  text-decoration: none;
+  font-size: large;
+}
+
+.PageError[data-theme='light'],
+.PageError[data-theme='dark'] {
+  background-color: var(--background);
+}

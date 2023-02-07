@@ -1,0 +1,37 @@
+.sideBar {
+  width: 15rem;
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+}
+
+.sideBar .logo {
+  margin-top: 8px;
+  width: 7rem;
+  height: 2rem;
+  padding-right: 10px;
+}
+
+.sideBar .top {
+  height: 56px;
+  padding-top: 16px;
+}
+
+.sideBar .bottom {
+  padding: 8px 24px;
+}
+
+button, input[type="submit"], input[type="reset"] .sideBar .bottom .darkmode {
+  font-size: 1.4rem;
+  background: none;
+	color: inherit;
+	border: none;
+	cursor: pointer;
+	outline: inherit;
+}
+
+.sideBar[data-theme='dark'],
+.sideBar[data-theme='light'] {
+  background-color: var(--sidebar-background);
+  color: var(--text-primary);
+}

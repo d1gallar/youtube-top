@@ -1,0 +1,48 @@
+.DataError[data-theme='light'],
+.DataError[data-theme='light'] {
+  background-color: var(--background);
+  color: var(--text-primary);
+}
+
+.DataError.error {
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-primary);
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.DataError.flex-center {
+  display: flex;
+  width: 92%;
+  margin: 0 4% 0 4%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.DataError.error :is(h1, h2, h3, h4, h5, h5) {
+  color: var(--text-primary);
+  margin: 0 0;
+}
+
+button.error {
+  color: var(--text-primary);
+  background-color: rgba(220, 37, 37);
+  padding: .7rem 1.2rem;
+  border-radius: 15px;
+  text-decoration: none;
+  font-size: medium;
+  font-weight: 700;
+  height: fit-content;
+  margin-top: 1rem;
+  width: fit-content;
+}
+
+button.error:hover {
+  background: rgb(227, 47, 47);
+}
