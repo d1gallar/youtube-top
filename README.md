@@ -10,6 +10,7 @@ This web app is built with a bunch of tools such as:
 - [Node](https://nodejs.org/en/)
 - [Bootstrap](https://getbootstrap.com/)
 - [Axios](https://axios-http.com/)
+- [Netlify](https://www.netlify.com/)
 
 ## Installation
 To install this web app, you need to run the node package manager and install all of its packages. Next, you need to run the backend and frontend server and you're all set!
@@ -18,7 +19,14 @@ To install this web app, you need to run the node package manager and install al
 
     <code>npm install</code>
 
-2. Start frontend and backend servers with these commands!
+2. Compile typescript!
 
-    <code>npm start</code>
-    <code>npm run server</code>
+    <code>npm run tsc</code>
+
+3. Download the build.
+
+    <code>npm run build</code>
+
+4. Use Netlify CLI to run serverless functions and frontend in development mode!
+
+    <code>netlify dev</code>
