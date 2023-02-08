@@ -6,7 +6,8 @@ import channelRouter from "./routes/Channels";
 import videoRouter from "./routes/Video";
 
 const app = express();
-const SERVER_PORT = process.env.SERVER_PORT;
+const PORT = process.env.PORT;
+const SERVER_URL = process.env.SERVER_URL;
 
 app.use(express.static(path.resolve(__dirname, "../public")));
 app.use(express.urlencoded({ extended: true }));
@@ -19,6 +20,6 @@ app.get("*", (req, res) => {
   res.status(404).send("404 Page Not Found.");
 });
 
-app.listen(SERVER_PORT, () => {
-  console.log(`Listening at http://localhost:${SERVER_PORT}`);
+app.listen(PORT, () => {
+  console.log(`Backend server is running on ${SERVER_URL}:${PORT}.`);
 });

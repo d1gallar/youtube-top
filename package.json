@@ -4,8 +4,8 @@
   "description": "> A web app that visualizes the most popular videos and channels on Youtube.",
   "main": "/src/app.js",
   "engines": {
-    "node": ">=16.13.2",
-    "npm": ">=8.4.0"
+    "node": ">=v16.19.0",
+    "npm": ">=8.19.3"
   },
   "devDependencies": {
     "@types/react": "^18.0.27",
