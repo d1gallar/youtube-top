@@ -1,5 +1,7 @@
 # Youtube Top Videos
 
+![youtube-showcase](https://github.com/d1gallar/youtube-top/assets/49170814/61e2d81f-ebf4-4dc1-ba17-52370223347b)
+
 ## 📄 Description
 A web app that visualizes the most popular videos and channels on Youtube.
 
